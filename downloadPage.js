@@ -6,6 +6,10 @@ request(baseUrl, function(err, response,html){
       console.log(err);
       return;
   }
-  console.log(html);
+  var regex = /piesa":"([^"]+)","artist":"([^"]+)/gi;
+  var matches;
+  while((matches = regex.exec(html))!= null){
+     console.log(matches[1]+" - "+matches[2]);
+  }
 });
 }
