@@ -19,10 +19,10 @@ exports.handler = (event, context, callback) => {
 
     function complete(err, songs){
         if (err) console.error(err);
-        //processing
-        console.log(songs);
         //add the date for each song
         songs.forEach(function(song) { song.weekDate= saturdays[completeCount]});
+        //processing
+        console.log(songs);
         completeCount += 1;
         if (completeCount == saturdays.length){
             allComplete();
